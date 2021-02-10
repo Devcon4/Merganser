@@ -1,0 +1,21 @@
+version: '3.4'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: dev
+      POSTGRES_PASSWORD: MerganserDev
+      POSTGRES_DB: Merganser
+    volumes:
+      - dbdata:/var/lib/psotgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - dev_default
+
+volumes:
+  dbdata:
+
+networks:
+  dev_default:
